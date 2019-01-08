@@ -182,13 +182,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList, item){
-  if(item == true){
+  if(!!myGroceryList == true && !!item == true){
     for(let i=0;i<myGroceryList.length;i++){
       if(myGroceryList[i]==item){
         myGroceryList.splice(i,1);
       }
-      return myGroceryList;
     }
+    return myGroceryList;
+  }
+  return [];
+}
+
+
+function addItem(myGroceryList, item){
+  if(!!myGroceryList == true && !!item == true){
+    myGroceryList.push(item);
+    return myGroceryList;
   }
   return [];
 }
@@ -320,6 +329,8 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees = [tyler, cahlan, ryan, colt];
+console.log(devMountainEmployees.length);
 
 
 
@@ -329,8 +340,15 @@ var colt = {
 */
 
 //Code Here
+function findHimself(arr, emp){
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i]['name'] === emp) {
+      arr.splice(i, 1)
+    } 
+  }
+}
 
-
+findHimself(devMountainEmployees, 'Cahlan')
 
 ////////// PROBLEM 13 //////////
 
@@ -341,6 +359,7 @@ var colt = {
 */
 
 //Code Here
+let users = [];
 
 
 
@@ -360,8 +379,21 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users.push(user1);
+users.push({
+  name: 'John Smith',
+  email: 'johnsmith@gmail.com',
+  password: 'iLoveHTML',
+  username: 'nodeJS'
+})
+users.push({
+  name: 'Jane Smith',
+  email: 'janesmith@gmail.com',
+  password: 'iLoveCSS',
+  username: 'reactJS'
+})
 
-
+console.log(users)
 
 /*
   Now you have a very common data structure. 
@@ -374,7 +406,16 @@ var user1 = {
 */
 
 //Code Here
+function delAcct(eml){
+  for(let i=0; i<users.length; i++){
+    if(users[i]['email'] == eml){
+      users.splice(i,1)
+    }
+  }
+}
 
+delAcct("tylermcginnis33@gmail.com");
+console.log(users);
 
 
 /*

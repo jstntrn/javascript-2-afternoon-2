@@ -91,7 +91,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 //Code Here
 function evenFinder(nums){
-  return nums.filter(number => number%2 == 0);
+  return nums.filter(number => number%2 === 0);
 }
 
 
@@ -121,8 +121,8 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 function divider(numbersArray){
-  let evens = numbersArray.filter(number => number%2 == 0);
-  let odds = numbersArray.filter(number => number%2 != 0);
+  let evens = numbersArray.filter(number => number%2 === 0);
+  let odds = numbersArray.filter(number => number%2 !== 0);
   return [evens, odds];
 }
 
@@ -147,7 +147,7 @@ var getRandomArbitrary = function() {
 //Code Here
 function finder(arr){
   for(let i=1;i<arr.length;i++){
-    if(arr.includes(getRandomArbitrary())==true){
+    if(arr.includes(getRandomArbitrary())===true){
       return true;
     }
   }
@@ -182,7 +182,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 function removeItem(myGroceryList, item){
-  if(!!myGroceryList == true && !!item == true){
+  if(!!myGroceryList === true && !!item === true){
     for(let i=0;i<myGroceryList.length;i++){
       if(myGroceryList[i]==item){
         myGroceryList.splice(i,1);
@@ -195,7 +195,7 @@ function removeItem(myGroceryList, item){
 
 
 function addItem(myGroceryList, item){
-  if(!!myGroceryList == true && !!item == true){
+  if(!!myGroceryList === true && !!item === true){
     myGroceryList.push(item);
     return myGroceryList;
   }
@@ -408,7 +408,7 @@ console.log(users)
 //Code Here
 function delAcct(eml){
   for(let i=0; i<users.length; i++){
-    if(users[i]['email'] == eml){
+    if(users[i]['email'] === eml){
       users.splice(i,1)
     }
   }
